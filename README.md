@@ -15,9 +15,9 @@ bool isValid = await FlutterNumberCaptcha.show(context);
 ```dart
 bool isValid = await  FlutterNumberCaptcha.show(
 	context,
-	titleText:  'Enter correct number',
-	placeholderText:  'Enter Number',
-	checkCaption:  'Check',
+	titleText: 'Enter correct number',
+	placeholderText: 'Enter Number',
+	checkCaption: 'Check',
 );
 // return true if entered number is right
 // return false if dialog closed by user
