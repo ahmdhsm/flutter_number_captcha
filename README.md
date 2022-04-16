@@ -1,5 +1,6 @@
 ## Flutter Number Captcha
 Display and validate random number captcha
+![Package Demo](https://raw.githubusercontent.com/lustea00/flutter_number_captcha/master/doc/example.gif)
 
 ## Usage
 To use this plugin, add `flutter_number_captcha` as a dependency in your pubspec.yaml file.
