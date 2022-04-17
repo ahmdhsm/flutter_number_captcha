@@ -24,6 +24,4 @@ bool isValid = await  FlutterNumberCaptcha.show(
 // return true if entered number is right
 // return false if dialog closed by user
 ```
-## Contributing to this plugin[](https://pub.dev/packages/in_app_purchase#contributing-to-this-plugin)
 
-If you would like to contribute to the plugin, check out our [contribution guide](https://github.com/flutter/plugins/blob/master/CONTRIBUTING.md).

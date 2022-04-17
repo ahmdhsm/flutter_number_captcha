@@ -1,6 +1,6 @@
 name: flutter_number_captcha
-description: Flutter plugin to display random number captcha.
-version: 0.0.4
+description: Flutter plugin to display random number captcha. This plugin will show dialog and validate number ccaptcha.
+version: 0.0.5
 homepage: https://github.com/lustea00/flutter_number_captcha
 
 environment:
@@ -26,13 +26,16 @@ flutter:
   # adding or updating assets for this project.
   plugin:
     platforms:
+      android:
+        package: com.knowname.flutter_number_captcha
+        pluginClass: FlutterNumberCaptcha
+      ios:
+        pluginClass: FlutterNumberCaptcha
     # This plugin project was generated without specifying any
     # platforms with the `--platform` argument. If you see the `some_platform` map below, remove it and
     # then add platforms following the instruction here:
     # https://flutter.dev/docs/development/packages-and-plugins/developing-packages#plugin-platforms
     # -------------------
-      some_platform:
-        pluginClass: somePluginClass
     # -------------------
 
   # To add assets to your plugin package, add an assets section, like this:
