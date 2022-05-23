@@ -20,6 +20,8 @@ bool isValid = await  FlutterNumberCaptcha.show(
 	titleText: 'Enter correct number',
 	placeholderText: 'Enter Number',
 	checkCaption: 'Check',
+	accentColor: Colors.blue,
+    invalidText: 'Invalid code',
 );
 // return true if entered number is right
 // return false if dialog closed by user

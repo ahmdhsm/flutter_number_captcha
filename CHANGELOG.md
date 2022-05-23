@@ -1,23 +1,29 @@
-## 0.0.1
+## 0.0.7
 
-*  Initial release.
+*  NEW: Change code on failed attempt
+*  NEW: Customize accentColor
+*  NEW: L10n --> Provide a customized text for an invalid code.
 
-## 0.0.2
+## 0.0.6
 
-*  Add gif in readme.
-
-## 0.0.3
-
-*  Add gif in readme.
-
-## 0.0.4
-
-*  Add example.
+*  Fix typo in documentation.
 
 ## 0.0.5
 
 *  Add supported platform list.
 
-## 0.0.6
+## 0.0.4
 
-*  Fix typo in documentation.
+*  Add example.
+
+## 0.0.3
+
+*  Add gif in readme.
+
+## 0.0.2
+
+*  Add gif in readme.
+
+## 0.0.1
+
+*  Initial release.

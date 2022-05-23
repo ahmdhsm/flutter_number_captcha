@@ -62,6 +62,8 @@ class _MyAppState extends State<MyApp> {
                   titleText: 'Enter correct number',
                   placeholderText: 'Enter Number',
                   checkCaption: 'Check',
+                  accentColor: Colors.blue,
+                  invalidText: 'Invalid code',
                 );
                 // TODO: Do whatever you want with the result!
                 print(test);
