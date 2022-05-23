@@ -2,17 +2,24 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
 import 'number_captcha.dart';
 
 class NumberCaptchaDialog extends StatefulWidget {
   const NumberCaptchaDialog(
-      this.titleText, this.placeholderText, this.checkCaption,
-      {Key? key})
-      : super(key: key);
+    this.titleText,
+    this.placeholderText,
+    this.checkCaption,
+    this.invalidText, {
+    Key? key,
+    this.accentColor,
+  }) : super(key: key);
 
   final String titleText;
   final String placeholderText;
   final String checkCaption;
+  final String invalidText;
+  final Color? accentColor;
 
   @override
   State<NumberCaptchaDialog> createState() => _NumberCaptchaDialogState();
@@ -61,10 +68,10 @@ class _NumberCaptchaDialogState extends State<NumberCaptchaDialog> {
                   padding: const EdgeInsets.only(bottom: 20),
                   child: Text(
                     widget.titleText,
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
-                      color: Colors.blue,
+                      color: widget.accentColor ?? Colors.blue,
                     ),
                     textAlign: TextAlign.center,
                   ),
@@ -78,8 +85,8 @@ class _NumberCaptchaDialogState extends State<NumberCaptchaDialog> {
                     Container(
                       height: 40,
                       width: 40,
-                      decoration: const BoxDecoration(
-                        color: Colors.blue,
+                      decoration: BoxDecoration(
+                        color: widget.accentColor ?? Colors.blue,
                         borderRadius: BorderRadius.all(
                           Radius.circular(3),
                         ),
@@ -104,7 +111,9 @@ class _NumberCaptchaDialogState extends State<NumberCaptchaDialog> {
                   padding: const EdgeInsets.only(right: 5),
                   decoration: BoxDecoration(
                     border: Border.all(
-                      color: isValid == false ? Colors.red : Colors.blue,
+                      color: isValid == false
+                          ? Colors.red
+                          : widget.accentColor ?? Colors.blue,
                     ),
                     borderRadius: const BorderRadius.all(
                       Radius.circular(5),
@@ -140,8 +149,8 @@ class _NumberCaptchaDialogState extends State<NumberCaptchaDialog> {
                       ),
                       Container(
                         height: 30,
-                        decoration: const BoxDecoration(
-                          color: Colors.blue,
+                        decoration: BoxDecoration(
+                          color: widget.accentColor ?? Colors.blue,
                           borderRadius: BorderRadius.all(
                             Radius.circular(5),
                           ),
@@ -154,6 +163,7 @@ class _NumberCaptchaDialogState extends State<NumberCaptchaDialog> {
                                 isValid = true;
                                 Navigator.pop(context, true);
                               } else {
+                                generateCode();
                                 isValid = false;
                                 setState(() {});
                               }
@@ -181,9 +191,9 @@ class _NumberCaptchaDialogState extends State<NumberCaptchaDialog> {
                   child: Padding(
                     padding: const EdgeInsets.only(top: 0),
                     child: Row(
-                      children: const <Widget>[
+                      children: <Widget>[
                         Text(
-                          'Invalid code',
+                          widget.invalidText,
                           style: TextStyle(color: Colors.red),
                           textAlign: TextAlign.left,
                         ),

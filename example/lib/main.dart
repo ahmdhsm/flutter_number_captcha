@@ -1,7 +1,6 @@
-import 'package:flutter/material.dart';
 import 'dart:async';
 
-import 'package:flutter/services.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_number_captcha/flutter_number_captcha.dart';
 
 void main() {
@@ -53,16 +52,38 @@ class _MyAppState extends State<MyApp> {
         title: const Text('Plugin example app'),
       ),
       body: Center(
-        child: TextButton(
-          onPressed: () async {
-            final bool test = await FlutterNumberCaptcha.show(
-              context,
-              titleText: 'Enter correct number',
-              placeholderText: 'Enter Number',
-              checkCaption: 'Check',
-            );
-          },
-          child: const Text('Open Captcha'),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            TextButton(
+              onPressed: () async {
+                final bool test = await FlutterNumberCaptcha.show(
+                  context,
+                  titleText: 'Enter correct number',
+                  placeholderText: 'Enter Number',
+                  checkCaption: 'Check',
+                );
+                // TODO: Do whatever you want with the result!
+                print(test);
+              },
+              child: const Text('Open Default Captcha'),
+            ),
+            TextButton(
+              onPressed: () async {
+                final bool test = await FlutterNumberCaptcha.show(
+                  context,
+                  titleText: 'Resuelva el captcha',
+                  placeholderText: 'Introduzca el número',
+                  checkCaption: 'Comprobar',
+                  invalidText: "Número inválido",
+                  accentColor: Colors.deepPurple,
+                );
+                // TODO: Do whatever you want with the result!
+                print(test);
+              },
+              child: const Text('Open Captcha - Customized'),
+            ),
+          ],
         ),
       ),
     );
