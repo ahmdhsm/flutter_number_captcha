@@ -13,6 +13,8 @@ class FlutterNumberCaptcha {
     String titleText = 'Enter correct number',
     String placeholderText = 'Enter Number',
     String checkCaption = 'Check',
+    String invalidText = 'Invalid Code',
+    Color? accentColor,
   }) async {
     bool? result = await showDialog(
       context: context,
@@ -21,6 +23,8 @@ class FlutterNumberCaptcha {
           titleText,
           placeholderText,
           checkCaption,
+          invalidText,
+          accentColor: accentColor,
         );
       },
     );
