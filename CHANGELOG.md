@@ -1,3 +1,7 @@
+## 0.0.8
+
+*  Fix cannot run in ios
+
 ## 0.0.7
 
 *  NEW: Change code on failed attempt
