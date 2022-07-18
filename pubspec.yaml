@@ -1,6 +1,6 @@
 name: flutter_number_captcha
 description: Flutter plugin to display random number captcha. This plugin will show dialog and validate number captcha.
-version: 0.0.7
+version: 0.0.8
 homepage: https://github.com/lustea00/flutter_number_captcha
 
 environment:
